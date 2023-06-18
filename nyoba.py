@@ -23,7 +23,7 @@ def transition_tab(transition):
     transition[('q6', ';')] = 'ACCEPT'
     transition[('q4', '-')] = 'q7'
     transition[('q5', '-')] = 'q8'
-    transition[('q6', ';')] = 'ACCEPT'
+    transition[('q8', ';')] = 'ACCEPT'
 #     for i in operator:
 #         transition[('q4', i)] = 'q9'
 #     transition[('q9', ' ')] = 'q9'
