@@ -40,11 +40,11 @@ def main():
     if st.button('Run'):
         output = ""
         try:
-            if analyze(inputCode):
+            if analyze(input_string):
                 st.write(f'Running')
             else:
                 st.write('Syntax Error')
-            if analyze(inputCode):
+            if analyze(input_string):
                 st.write('Hasil parsing:')
                 hasil = state_parse
                 for i in range(len(hasil)):
