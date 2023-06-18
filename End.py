@@ -61,7 +61,7 @@ def main():
                         hasil[i+3] = ''
                         hasil[i+4] = ''
                     elif hasil[i] == 'space' and hasil[i+1] == 'space':
-                        hasil[i+1] = ''
+                        hasil[i] = ''
                 hasil = [i for i in hasil if i != '']
                 st.write(hasil)
             else:
