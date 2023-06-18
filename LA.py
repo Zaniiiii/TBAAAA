@@ -1,4 +1,4 @@
-import nyoba
+import tbaDude
 from collections import defaultdict
 import streamlit as st
 
@@ -34,16 +34,16 @@ def concat(input_string):
     return 
 def main():
     # input_string = input("Input String : ")
-    input_string = st.text_area("Tulis Kodemu : ", placeholder="Input String")
-    input_string = input_string.replace('\n', ' ')
+    inputCode = st.text_area("Tulis Kodemu : ", placeholder="Input String")
+    inputCode = inputCode.replace('\n', ' ')
     if st.button('Run'):
         output = ""
         try:
-            if analyze(input_string):
+            if analyze(inputCode):
                 st.write(f'Running')
             else:
                 st.write('Syntax Error')
-            if analyze(input_string):
+            if analyze(inputCode):
                 st.write('TOKEN:')
                 hasil = state_parse
                 for i in range(len(hasil)):
@@ -56,12 +56,8 @@ def main():
                         hasil[i+2] = ''
                         hasil[i+3] = ''
                         hasil[i+4] = ''
-#                     elif hasil[i] == 'space':
-#                         for y in range(i,len(hasil)):
-#                             if hasil[y+1] != 'space':
-#                                  hasil[y] = ''
-#                             else:
-#                                 break
+                    elif hasil[i+1] == 'space':
+                        hasil[i] = ''
                 st.write(hasil)
             else:
                 st.write('ERROR : Lexical Error')
