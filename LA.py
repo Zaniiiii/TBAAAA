@@ -56,12 +56,12 @@ def main():
                         hasil[i+2] = ''
                         hasil[i+3] = ''
                         hasil[i+4] = ''
-                    elif hasil[i] == 'space':
-                        for y in range(i,len(hasil)):
-                            if hasil[y+1] != 'space':
-                                 hasil[y] = ''
-                            else:
-                                break
+#                     elif hasil[i] == 'space':
+#                         for y in range(i,len(hasil)):
+#                             if hasil[y+1] != 'space':
+#                                  hasil[y] = ''
+#                             else:
+#                                 break
                 st.write(hasil)
             else:
                 st.write('ERROR : Lexical Error')
