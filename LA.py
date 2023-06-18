@@ -46,10 +46,9 @@ def main():
                 result = [i for i in state_parse if i != 'space']
                 # parse word 'for', 'in', 'range'
                 for i in range(len(result)):
-                    if result[i] == 'f' and result[i+1] == 'o' and result[i+2] == 'r':
-                        result[i] = 'for'
+                    if result[i] == 'd' and result[i+1] == 'o':
+                        result[i] = 'do'
                         result[i+1] = ''
-                        result[i+2] = ''
                     elif result[i] == 'i' and result[i+1] == 'n':
                         result[i] = 'in'
                         result[i+1] = ''
