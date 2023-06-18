@@ -20,10 +20,23 @@ def transition_tab(transition):
             transition[('q4', i)] = 'q6'
     for i in operator:
         if i == '+':
-            transition[('q5', i)] = 'q7'
+            transition[('q5', i)] = 'q_'
         elif i == '-':
-            transition[('q6', i)] = 'q7'
-    transition[('q7', ';')] = 'ACCEPT'
+            transition[('q6', i)] = 'q_'
+    transition[('q_', ';')] = 'ACCEPT'
+    transition[('q4', '=')] = 'q7'
+    transition[('q7', ' ')] = 'q7'
+    for i in var:
+        transition[('q7', i)] = 'q8'
+    transition[('q8', ' ')] = 'q8'
+    for i in operator:
+        if i != '=' and i != '>' and i != '<':
+            transition[('q8', i)] = 'q9'
+    transition[('q9', ' ')] = 'q9'
+    for i in var:
+        transition[('q9', i)] = 'q10'
+#     transition[('q10', ' ')] = 'q10'
+    transition[('q10', ';')] = 'ACCEPT'
 #     for i in neg:
 #         transition[('q4', i)] = 'q7'
 #     for i in neg:
