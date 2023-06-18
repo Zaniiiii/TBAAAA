@@ -62,7 +62,7 @@ def main():
 #                                  hasil[y] = ''
 #                             else:
 #                                 break
-                st.write(hasil)
+                st.write(list(dict.fromkeys([i for i in hasil if i != ''])))
             else:
                 st.write('ERROR : Lexical Error')
         except:
