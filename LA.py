@@ -1,4 +1,4 @@
-import transition
+import nyoba
 from collections import defaultdict
 import streamlit as st
 
