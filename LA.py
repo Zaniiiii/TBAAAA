@@ -61,18 +61,6 @@ def main():
         except:
             print("ERROR : Lexical Error")
             st.write('ERROR : Lexical Error')
-    ex_code1 = '''for i in range(0,9,3):
-    i = i + 1'''
-    ex_code2 = '''for i in range(5):
-    i = i + 1
-    '''
-    ex_code3 = '''for i in x:
-    i = i + 1
-    '''
-    st.title('Example Code: ')
-    st.code(ex_code1, language='python')
-    st.code(ex_code2, language='python')
-    st.write('Sebagai contoh inisial x adalah list: [1,2,3,4,5]')
-    st.code(ex_code3, language='python')
+    st.title('Contoh kode dapat dilihat di: https://www.w3schools.com/cpp/cpp_do_while_loop.asp')
         
 main()
