@@ -55,6 +55,7 @@ def transition_tab(transition):
         if i == '=':
             transition[('q22', i)] = 'q23'
     for i in var:
+        transition[('q22', i)] = 'q24'
         transition[('q23', i)] = 'q24'
     transition[('q24', ' ')] = 'q24'
     transition[('q24', ')')] = 'q25'
