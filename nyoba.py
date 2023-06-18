@@ -37,8 +37,8 @@ def transition_tab(transition):
     for i in angka:
         transition[('q9', i)] = 'q10'
     transition[('q10', ' ')] = 'q10'
-    transition[('q10', ';')] = 'q11'
-    transition[('q11', '}')] = 'ACCEPT'
+    transition[('q10', ';')] = 'ACCEPT'
+#     transition[('q11', '}')] = 'ACCEPT'
 #     transition[('q12', ' ')] = 'q12'
 #     transition[('q12', 'w')] = 'q13'
 #     transition[('q13', 'h')] = 'q14'
