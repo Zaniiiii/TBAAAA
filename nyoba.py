@@ -26,17 +26,17 @@ def transition_tab(transition):
     for i in neg:
         transition[('q7', i)] = 'q8'
     transition[('q8', ';')] = 'ACCEPT'
-    transition[('q4', '=')] = 'q9'
-    transition[('q9', ' ')] = 'q9'
-    for i in var:
-        transition[('q9', i)] = 'q10'
-    transition[('q10', ' ')] = 'q10'
-    for i in operator:
-        transition[('q10', i)] = 'q11'
-    transition[('q11', ' ')] = 'q11'
-    for i in var:
-        transition[('q11', i)] = 'q12'
-    transition[('q12', ';')] = 'ACCEPT'
+    transition[('q4', '=')] = 'ACCEPT'
+#     transition[('q9', ' ')] = 'q9'
+#     for i in var:
+#         transition[('q9', i)] = 'q10'
+#     transition[('q10', ' ')] = 'q10'
+#     for i in operator:
+#         transition[('q10', i)] = 'q11'
+#     transition[('q11', ' ')] = 'q11'
+#     for i in var:
+#         transition[('q11', i)] = 'q12'
+#     transition[('q12', ';')] = 'ACCEPT'
 #     transition[('q6', "1")] = 'ACCEPT'
     # transition[('q3', ' ')] = 'q3'
     # transition[('q3', ' ')] = 'q3'
