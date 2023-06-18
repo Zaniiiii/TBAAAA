@@ -9,7 +9,7 @@ def analyze(input_string):
     # Inisilisasi Nilai Awal
     transition_table = defaultdict(lambda: "ERROR", {})
      
-    transition_table = tbaDude.transition_tab(transition_table)
+    transition_table = tbaDude.transisi(transition_table)
     
     idx = 0
     state = 'q0'
