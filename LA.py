@@ -55,7 +55,7 @@ def main():
                         state_parse[i+2] = ''
                         state_parse[i+3] = ''
                         state_parse[i+4] = ''
-                   elif state_parse[i] == 'space':
+                    elif state_parse[i] == 'space':
                         for y in range(i,len(state_parse)):
                             if state_parse[y+1] != 'space':
                                  state_parse[y] = ''
