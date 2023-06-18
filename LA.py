@@ -3,10 +3,8 @@ from collections import defaultdict
 import streamlit as st
 
 state_parse = []
-def analyze(input_string):
-    # Inisialisasi State 
+def analyze(inpuCode):
     state_list = []; list(state_list.append(f'q{i}') for i in range(30+1))
-    # Inisilisasi Nilai Awal
     transition_table = defaultdict(lambda: "ERROR", {})
      
     transition_table = tbaDude.transition_tab(transition_table)
@@ -14,15 +12,15 @@ def analyze(input_string):
     idx = 0
     state = 'q0'
     current_token = ''
-    # state_parse.append('#')
     while state != 'ACCEPT':
-        current_char = input_string[idx]
+        current_char = inputCode[idx]
         current_token += current_char
         state = transition_table[(state, current_char)]
         print(f'{state} : {current_token}')
-        if current_token[idx] == ' ': state_parse.append('space')
-        else: state_parse.append(current_token[idx])
-        
+        if current_token[idx] == ' ': 
+            state_parse.append('space')
+        else: 
+            state_parse.append(current_token[idx])
         if state == "ERROR":
             print("ERROR : Lexical Error")
             break
@@ -30,10 +28,9 @@ def analyze(input_string):
     
     return state == "ACCEPT" 
 
-def concat(input_string):
+def concat(inputCode):
     return 
 def main():
-    # input_string = input("Input String : ")
     inputCode = st.text_area("Tulis Kodemu : ", placeholder="Input String")
     inputCode = inputCode.replace('\n', ' ')
     if st.button('Run'):
