@@ -52,20 +52,22 @@ def transition_tab(transition):
         transition[('q19', i)] = 'q20'
     transition[('q20', ' ')] = 'q20'
     for i in operator:
-        if i == '=' or i == '>' or i == '<':
+        if i == '=':
             transition[('q20', i)] = 'q21'
+        if i == '>' or i == '<':
+            transition[('q20', i)] = 'q22'
     for i in operator:
         if i == '=':
-            transition[('q21', i)] = 'q22'
-    for i in var:
-        transition[('q21', i)] = 'q22'
-        transition[('q22', i)] = 'q23'
-    for i in angka:
-        transition[('q21', i)] = 'q22'
-        transition[('q22', i)] = 'q23'
+            transition[('q21', i)] = 'q23'
+            transition[('q22', i)] = 'q23'
     transition[('q23', ' ')] = 'q23'
-    transition[('q23', ')')] = 'q24'
-    transition[('q24', ';')] = 'ACCEPT'
+    for i in var:
+        transition[('q23', i)] = 'q24'
+    for i in angka:
+        transition[('q23', i)] = 'q24'
+    transition[('q24', ' ')] = 'q24'
+    transition[('q24', ')')] = 'q25'
+    transition[('q25', ';')] = 'ACCEPT'
 
         
 
