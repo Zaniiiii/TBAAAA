@@ -70,7 +70,7 @@ def main():
             print("ERROR : Lexical Error")
             st.write('ERROR : Lexical Error')
     st.title('Cara menjalankan:')
-    s1.write('Masukkan kode yang ingin dicek, pada tempat penulisan kode diatas')
+    st.write('Masukkan kode yang ingin dicek, pada tempat penulisan kode diatas')
     st.title('Berikut merupakan contoh code:')
     image1 = Image.open('1.png')
     image2 = Image.open('2.png')
