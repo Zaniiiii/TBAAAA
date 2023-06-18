@@ -60,7 +60,7 @@ def main():
                         hasil[i+2] = ''
                         hasil[i+3] = ''
                         hasil[i+4] = ''
-                    elif hasil[i+1] == 'space' and hasil[i] == 'space':
+                    elif hasil[i] == 'space' and hasil[i+1] == 'space':
                         hasil[i+1] = ''
                 hasil = [i for i in hasil if i != '']
                 st.write(hasil)
@@ -69,10 +69,14 @@ def main():
         except:
             print("ERROR : Lexical Error")
             st.write('ERROR : Lexical Error')
+    st.title('Cara menjalankan:')
+    s1.write('Masukkan kode yang ingin dicek, pada tempat penulisan kode diatas')
     st.title('Berikut merupakan contoh code:')
     image1 = Image.open('1.png')
     image2 = Image.open('2.png')
+    image3 = Image.open('3.png')
     st.image(image1, caption = 'Contoh 1')
     st.image(image2, caption = 'Contoh 2')
+    st.image(image3, caption = 'Contoh 3')
         
 main()
