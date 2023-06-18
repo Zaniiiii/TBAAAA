@@ -20,10 +20,9 @@ def transition_tab(transition):
             transition[('q4', i)] = 'q6'
     for i in operator:
         if i == '+':
-            transition[('q5', i)] = 'q_'
+            transition[('q5', i)] = 'q10'
         elif i == '-':
-            transition[('q6', i)] = 'q_'
-    transition[('q_', ';')] = 'ACCEPT'
+            transition[('q6', i)] = 'q10'
     transition[('q4', '=')] = 'q7'
     transition[('q7', ' ')] = 'q7'
     for i in var:
