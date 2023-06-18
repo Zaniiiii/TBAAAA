@@ -27,14 +27,14 @@ def transition_tab(transition):
     transition[('q7', ' ')] = 'q7'
     for i in var:
         transition[('q7', i)] = 'q8'
-    for i in angka:
-        transition[('q7', i)] = 'q8'
     transition[('q8', ' ')] = 'q8'
     for i in operator:
         if i != '=' and i != '>' and i != '<':
             transition[('q8', i)] = 'q9'
     transition[('q9', ' ')] = 'q9'
     for i in var:
+        transition[('q9', i)] = 'q10'
+    for i in angka:
         transition[('q9', i)] = 'q10'
     transition[('q10', ' ')] = 'q10'
     transition[('q10', ';')] = 'ACCEPT'
