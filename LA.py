@@ -42,6 +42,7 @@ def main():
             st.write(f'STATUS : {analyze(input_string)}')
             if analyze(input_string):
                 st.write('TOKEN:')
+                result = [i for i in state_parse]
                 for i in range(len(result)):
                     if result[i] == 'd' and result[i+1] == 'o':
                         result[i] = 'do'
@@ -58,7 +59,7 @@ def main():
         except:
             print("ERROR : Lexical Error")
             st.write('ERROR : Lexical Error')
-    st.title('Contoh kode dapat dilihat di: https://www.w3schools.com/cpp/cpp_do_while_loop.asp')
+    st.title('Contoh kode dapat dilihat di:')
     st.text('https://www.w3schools.com/cpp/cpp_do_while_loop.asp')
         
 main()
