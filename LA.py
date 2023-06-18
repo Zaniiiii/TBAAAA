@@ -56,7 +56,7 @@ def main():
                         result[i+2] = ''
                         result[i+3] = ''
                         result[i+4] = ''
-                st.write(list(dict.fromkeys([i for i in result if i != ''])))
+                st.write(state_parse)
             else:
                 st.write('ERROR : Lexical Error')
         except:
@@ -64,6 +64,5 @@ def main():
             st.write('ERROR : Lexical Error')
     st.title('Contoh kode dapat dilihat di:')
     st.text('https://www.w3schools.com/cpp/cpp_do_while_loop.asp')
-    st.write(state_parse)
         
 main()
