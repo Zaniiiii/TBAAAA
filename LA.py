@@ -39,7 +39,10 @@ def main():
     if st.button('Run'):
         output = ""
         try:
-            st.write(f'STATUS : Running')
+            if analyze(input_string):
+                st.write(f'Running')
+            else:
+                st.write('Syntax Error')
             if analyze(input_string):
                 st.write('TOKEN:')
                 result = [i for i in state_parse]
