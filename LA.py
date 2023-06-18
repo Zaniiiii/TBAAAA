@@ -62,5 +62,6 @@ def main():
             print("ERROR : Lexical Error")
             st.write('ERROR : Lexical Error')
     st.title('Contoh kode dapat dilihat di: https://www.w3schools.com/cpp/cpp_do_while_loop.asp')
+    st.text('https://www.w3schools.com/cpp/cpp_do_while_loop.asp'
         
 main()
