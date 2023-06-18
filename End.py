@@ -18,15 +18,15 @@ def analyze(inputCode):
     
     idx = 0
     state = 'q0'
-    current_token = ''
+    token = ''
     # state_parse.append('#')
     while state != 'ACCEPT':
         current_char = inputCode[idx]
-        current_token += current_char
+        token += current_char
         state = transition_table[(state, current_char)]
-        print(f'{state} : {current_token}')
-        if current_token[idx] == ' ': state_parse.append('space')
-        else: state_parse.append(current_token[idx])
+        print(f'{state} : {token}')
+        if token[idx] == ' ': state_parse.append('space')
+        else: state_parse.append(token[idx])
         
         if state == "ERROR":
             print("ERROR : Lexical Error")
@@ -60,12 +60,8 @@ def main():
                         hasil[i+2] = ''
                         hasil[i+3] = ''
                         hasil[i+4] = ''
-#                     elif hasil[i] == 'space':
-#                         for y in range(i,len(hasil)):
-#                             if hasil[y+1] != 'space':
-#                                  hasil[y] = ''
-#                             else:
-#                                 break
+                    elif hasil[i+1] == 'space':
+                        hasil[i] = ''
                 hasil = [i for i in hasil if i != '']
                 st.write(hasil)
             else:
