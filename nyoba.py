@@ -27,6 +27,8 @@ def transition_tab(transition):
     transition[('q7', ' ')] = 'q7'
     for i in var:
         transition[('q7', i)] = 'q8'
+    for i in angka:
+        transition[('q7', i)] = 'q8'
     transition[('q8', ' ')] = 'q8'
     for i in operator:
         if i != '=' and i != '>' and i != '<':
@@ -55,6 +57,9 @@ def transition_tab(transition):
         if i == '=':
             transition[('q22', i)] = 'q23'
     for i in var:
+        transition[('q22', i)] = 'q24'
+        transition[('q23', i)] = 'q24'
+    for i in angka:
         transition[('q22', i)] = 'q24'
         transition[('q23', i)] = 'q24'
     transition[('q24', ' ')] = 'q24'
