@@ -4,22 +4,25 @@ import streamlit as st
 from PIL import Image
 
 state_parse = []
-def analyze(inputCode):
+def analyze(input_string):
+    # Inisialisasi State 
     state_list = []; list(state_list.append(f'q{i}') for i in range(30+1))
+    # Inisilisasi Nilai Awal
     transition_table = defaultdict(lambda: "ERROR", {})
      
     transition_table = tbaDude.transisi(transition_table)
     
     idx = 0
     state = 'q0'
-    token = ''
+    current_token = ''
+    # state_parse.append('#')
     while state != 'ACCEPT':
-        current_char = inputCode[idx]
-        token += current_char
+        current_char = input_string[idx]
+        current_token += current_char
         state = transition_table[(state, current_char)]
-        print(f'{state} : {token}')
-        if token[idx] == ' ': state_parse.append('space')
-        else: state_parse.append(token[idx])
+        print(f'{state} : {current_token}')
+        if current_token[idx] == ' ': state_parse.append('space')
+        else: state_parse.append(current_token[idx])
         
         if state == "ERROR":
             print("ERROR : Lexical Error")
@@ -28,11 +31,12 @@ def analyze(inputCode):
     
     return state == "ACCEPT" 
 
-def concat(inputCode):
+def concat(input_string):
     return 
 def main():
-    inputCode = st.text_area("Tulis Kodemu : ", placeholder="Input String")
-    inputCode = inputCode.replace('\n', ' ')
+    # input_string = input("Input String : ")
+    input_string = st.text_area("Tulis Kodemu : ", placeholder="Input String")
+    input_string = input_string.replace('\n', ' ')
     if st.button('Run'):
         output = ""
         try:
