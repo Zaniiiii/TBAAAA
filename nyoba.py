@@ -2,7 +2,8 @@ def transition_tab(transition):
     var = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
     angka = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
     operator = ['+', '-', '*', '/', '%', '=', '<', '>']
-    indecrement = ['+','-']
+    indecrementplus = ['+']
+    indecrementneg = ['-']
     hasil = []
     
     # Syntax for
@@ -15,8 +16,10 @@ def transition_tab(transition):
     for i in var:
         transition[('q3', i)] = 'q4'
     transition[('q4', ' ')] = 'q4'
-    transition[('q4', '+')] = 'q5'
-    transition[('q5', '+')] = 'q6'
+    for i in indecrementplus:
+        transition[('q4', 'i')] = 'q5'
+    for i in indecrementplus:
+        transition[('q5', 'i')] = 'q6'
     transition[('q6', ';')] = 'ACCEPT'
     transition[('q4', '-')] = 'q7'
     transition[('q5', '-')] = 'q8'
