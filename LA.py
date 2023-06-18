@@ -45,17 +45,16 @@ def main():
                 st.write('Syntax Error')
             if analyze(input_string):
                 st.write('TOKEN:')
-                result = [i for i in state_parse]
-                for i in range(len(result)):
-                    if result[i] == 'd' and result[i+1] == 'o':
-                        result[i] = 'do'
-                        result[i+1] = ''
-                    elif result[i] == 'w' and result[i+1] == 'h' and result[i+2] == 'i' and result[i+3] == 'l' and result[i+4] == 'e':
-                        result[i] = 'while'
-                        result[i+1] = ''
-                        result[i+2] = ''
-                        result[i+3] = ''
-                        result[i+4] = ''
+                for i in range(len(state_parse)):
+                    if state_parse[i] == 'd' and state_parse[i+1] == 'o':
+                        state_parse[i] = 'do'
+                        state_parse[i+1] = ''
+                    elif state_parse[i] == 'w' and state_parse[i+1] == 'h' and state_parse[i+2] == 'i' and state_parse[i+3] == 'l' and state_parse[i+4] == 'e':
+                        state_parse[i] = 'while'
+                        state_parse[i+1] = ''
+                        state_parse[i+2] = ''
+                        state_parse[i+3] = ''
+                        state_parse[i+4] = ''
                 st.write(state_parse)
             else:
                 st.write('ERROR : Lexical Error')
