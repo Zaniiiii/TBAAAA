@@ -4,10 +4,8 @@ import streamlit as st
 from PIL import Image
 
 state_parse = []
-def analyze(input_string):
-    # Inisialisasi State 
+def analyze(inputCode):
     state_list = []; list(state_list.append(f'q{i}') for i in range(30+1))
-    # Inisilisasi Nilai Awal
     transition_table = defaultdict(lambda: "ERROR", {})
      
     transition_table = tbaDude.transisi(transition_table)
@@ -15,9 +13,8 @@ def analyze(input_string):
     idx = 0
     state = 'q0'
     token = ''
-    # state_parse.append('#')
     while state != 'ACCEPT':
-        current_char = input_string[idx]
+        current_char = inputCode[idx]
         token += current_char
         state = transition_table[(state, current_char)]
         print(f'{state} : {token}')
@@ -31,20 +28,19 @@ def analyze(input_string):
     
     return state == "ACCEPT" 
 
-def concat(input_string):
+def concat(inputCode):
     return 
 def main():
-    # input_string = input("Input String : ")
-    input_string = st.text_area("Tulis Kodemu : ", placeholder="Input String")
-    input_string = input_string.replace('\n', ' ')
+    inputCode = st.text_area("Tulis Kodemu : ", placeholder="Input String")
+    inputCode = inputCode.replace('\n', ' ')
     if st.button('Run'):
         output = ""
         try:
-            if analyze(input_string):
+            if analyze(inputCode):
                 st.write(f'Running')
             else:
                 st.write('Syntax Error')
-            if analyze(input_string):
+            if analyze(inputCode):
                 st.write('Hasil parsing:')
                 hasil = state_parse
                 for i in range(len(hasil)):
