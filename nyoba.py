@@ -18,12 +18,12 @@ def transition_tab(transition):
             transition[('q4', i)] = 'q5'
         elif i == '-':
             transition[('q4', i)] = 'q6'
-#     for i in operator:
-#         if i == '+':
-#             transition[('q5', i)] = 'q7'
-#         elif i == '-':
-#             transition[('q6', i)] = 'q7'
-    transition[('q5', ';')] = 'ACCEPT'
+    for i in operator:
+        if i == '+':
+            transition[('q5', i)] = 'q7'
+        elif i == '-':
+            transition[('q6', i)] = 'q7'
+    transition[('q7', ';')] = 'ACCEPT'
 #     for i in neg:
 #         transition[('q4', i)] = 'q7'
 #     for i in neg:
