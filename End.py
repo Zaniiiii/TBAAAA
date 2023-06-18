@@ -70,8 +70,9 @@ def main():
             print("ERROR : Lexical Error")
             st.write('ERROR : Lexical Error')
     st.title('Contoh kode dapat dilihat di:')
-    image1 = Image.open(1.png, caption = 'Contoh 1')
-    image2 = Image.open(2.png, caption = 'Contoh 2')
-    st.image(image, 
+    image1 = Image.open('1.png')
+    image1 = Image.open('2.png')
+    st.image(image1, caption = 'Contoh 1')
+    st.image(image2, caption = 'Contoh 2')
         
 main()
