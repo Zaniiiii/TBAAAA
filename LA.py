@@ -39,7 +39,7 @@ def main():
     if st.button('Run'):
         output = ""
         try:
-            st.write(f'STATUS : {analyze(input_string)}')
+            st.write(f'STATUS : Kodingan diterima')
             if analyze(input_string):
                 st.write('TOKEN:')
                 result = [i for i in state_parse]
