@@ -38,6 +38,8 @@ def analyze(inputCode):
 def concat(inputCode):
     return 
 def main():
+    st.title("Tugas TBA Kelompok 10")
+    
     inputCode = st.text_area("Tulis Kodemu : ", placeholder="Input Code")
     inputCode = inputCode.replace('\n', ' ')
     if st.button('Run'):
