@@ -19,7 +19,7 @@ def analyze(input_string):
         current_char = input_string[idx]
         current_token += current_char
         state = transition_table[(state, current_char)]
-        # print(f'{state} : {current_char}')
+        print(f'{state} : {current_token}')
         if current_token[idx] == ' ': state_parse.append('space')
         else: state_parse.append(current_token[idx])
         
@@ -34,9 +34,9 @@ def concat(input_string):
     return 
 def main():
     # input_string = input("Input String : ")
-    input_string = st.text_area("Input String : ", placeholder="Input String")
+    input_string = st.text_area("Tulis Kodemu : ", placeholder="Input String")
     input_string = input_string.replace('\n', ' ')
-    if st.button('Analyze'):
+    if st.button('Run'):
         output = ""
         try:
             st.write(f'STATUS : {analyze(input_string)}')
