@@ -3,10 +3,6 @@ from collections import defaultdict
 import streamlit as st
 from PIL import Image
 
-import tbaDude
-from collections import defaultdict
-import streamlit as st
-
 state_parse = []
 def analyze(inputCode):
     # Inisialisasi State 
