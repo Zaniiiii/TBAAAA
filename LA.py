@@ -1,4 +1,4 @@
-import transition
+import nyoba
 from collections import defaultdict
 import streamlit as st
 
@@ -9,7 +9,7 @@ def analyze(input_string):
     # Inisilisasi Nilai Awal
     transition_table = defaultdict(lambda: "ERROR", {})
      
-    transition_table = transition.transition_tab(transition_table)
+    transition_table = nyoba.transition_tab(transition_table)
     
     idx = 0
     state = 'q0'
@@ -81,4 +81,3 @@ def main():
     st.code(ex_code3, language='python')
         
 main()
-    
