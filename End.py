@@ -13,15 +13,15 @@ def analyze(input_string):
     
     idx = 0
     state = 'q0'
-    current_token = ''
+    token = ''
     # state_parse.append('#')
     while state != 'ACCEPT':
         current_char = input_string[idx]
-        current_token += current_char
+        token += current_char
         state = transition_table[(state, current_char)]
-        print(f'{state} : {current_token}')
-        if current_token[idx] == ' ': state_parse.append('space')
-        else: state_parse.append(current_token[idx])
+        print(f'{state} : {token}')
+        if token[idx] == ' ': state_parse.append('space')
+        else: state_parse.append(token[idx])
         
         if state == "ERROR":
             print("ERROR : Lexical Error")
@@ -44,7 +44,7 @@ def main():
             else:
                 st.write('Syntax Error')
             if analyze(input_string):
-                st.write('TOKEN:')
+                st.write('Hasil parsing:')
                 hasil = state_parse
                 for i in range(len(hasil)):
                     if hasil[i] == 'd' and hasil[i+1] == 'o':
@@ -70,6 +70,8 @@ def main():
             print("ERROR : Lexical Error")
             st.write('ERROR : Lexical Error')
     st.title('Contoh kode dapat dilihat di:')
-    st.text('https://www.w3schools.com/cpp/cpp_do_while_loop.asp')
+    image1 = Image.open(1.png, caption = 'Contoh 1')
+    image2 = Image.open(2.png, caption = 'Contoh 2')
+    st.image(image, 
         
 main()
