@@ -62,7 +62,7 @@ def main():
 #                                  hasil[y] = ''
 #                             else:
 #                                 break
-               hasil = [i for i in hasil if i != '']
+                hasil = [i for i in hasil if i != '']
                 st.write(hasil)
             else:
                 st.write('ERROR : Lexical Error')
