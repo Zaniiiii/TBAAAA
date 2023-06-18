@@ -49,12 +49,12 @@ def main():
                     if result[i] == 'd' and result[i+1] == 'o':
                         result[i] = 'do'
                         result[i+1] = ''
-#                     elif result[i] == 'w' and result[i+1] == 'h' and result[i+2] == 'i' and result[i+3] == 'l' and result[i+4] == 'e':
-#                         result[i] = 'while'
-#                         result[i+1] = ''
-#                         result[i+2] = ''
-#                         result[i+3] = ''
-#                         result[i+4] = ''
+                    elif result[i] == 'w' and result[i+1] == 'h' and result[i+2] == 'i' and result[i+3] == 'l' and result[i+4] == 'e':
+                        result[i] = 'while'
+                        result[i+1] = ''
+                        result[i+2] = ''
+                        result[i+3] = ''
+                        result[i+4] = ''
                 st.write(list(dict.fromkeys([i for i in result if i != ''])))
             else:
                 st.write('ERROR : Lexical Error')
