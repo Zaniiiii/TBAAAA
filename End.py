@@ -1,6 +1,7 @@
 import tbaDude
 from collections import defaultdict
 import streamlit as st
+from PIL import Image
 
 state_parse = []
 def analyze(input_string):
@@ -71,7 +72,7 @@ def main():
             st.write('ERROR : Lexical Error')
     st.title('Contoh kode dapat dilihat di:')
     image1 = Image.open('1.png')
-    image1 = Image.open('2.png')
+    image2 = Image.open('2.png')
     st.image(image1, caption = 'Contoh 1')
     st.image(image2, caption = 'Contoh 2')
         
