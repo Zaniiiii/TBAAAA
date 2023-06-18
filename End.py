@@ -3,6 +3,10 @@ from collections import defaultdict
 import streamlit as st
 from PIL import Image
 
+import tbaDude
+from collections import defaultdict
+import streamlit as st
+
 state_parse = []
 def analyze(input_string):
     # Inisialisasi State 
@@ -45,7 +49,7 @@ def main():
             else:
                 st.write('Syntax Error')
             if analyze(input_string):
-                st.write('Hasil parsing:')
+                st.write('TOKEN:')
                 hasil = state_parse
                 for i in range(len(hasil)):
                     if hasil[i] == 'd' and hasil[i+1] == 'o':
