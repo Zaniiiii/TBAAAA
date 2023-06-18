@@ -35,7 +35,7 @@ def transition_tab(transition):
     transition[('q9', ' ')] = 'q9'
     for i in var:
         transition[('q9', i)] = 'q10'
-#     transition[('q10', ' ')] = 'q10'
+    transition[('q10', ' ')] = 'q10'
     transition[('q10', ';')] = 'ACCEPT'
 #     for i in neg:
 #         transition[('q4', i)] = 'q7'
