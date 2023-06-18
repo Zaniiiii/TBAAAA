@@ -39,67 +39,37 @@ def transition_tab(transition):
     transition[('q10', ' ')] = 'q10'
     transition[('q10', ';')] = 'q11'
     transition[('q11', ' ')] = 'q12'
-    while i != '{':
-        for i in var:
-            transition[('q3', i)] = 'q4'
-        transition[('q4', ' ')] = 'q4'
-        for i in operator:
-            if i == '+':
-                transition[('q4', i)] = 'q5'
-            elif i == '-':
-                transition[('q4', i)] = 'q6'
-        for i in operator:
-            if i == '+':
-                transition[('q5', i)] = 'q10'
-            elif i == '-':
-                transition[('q6', i)] = 'q10'
-        transition[('q4', '=')] = 'q7'
-        transition[('q7', ' ')] = 'q7'
-        for i in var:
-            transition[('q7', i)] = 'q8'
-        transition[('q8', ' ')] = 'q8'
-        for i in operator:
-            if i != '=' and i != '>' and i != '<':
-                transition[('q8', i)] = 'q9'
-        transition[('q9', ' ')] = 'q9'
-        for i in var:
-            transition[('q9', i)] = 'q10'
-        for i in angka:
-            transition[('q9', i)] = 'q10'
-        transition[('q10', ' ')] = 'q10'
-        transition[('q10', ';')] = 'q11'
-        transition[('q11', ' ')] = 'q12'
-    transition[('q12', '}')] = 'ACCEPT'
-#     transition[('q13', ' ')] = 'q13'
-#     transition[('q13', 'w')] = 'q14'
-#     transition[('q14', 'h')] = 'q15'
-#     transition[('q15', 'i')] = 'q16'
-#     transition[('q16', 'l')] = 'q17'
-#     transition[('q17', 'e')] = 'q18'
-#     transition[('q18', ' ')] = 'q18'
-#     transition[('q18', '(')] = 'q19'
-#     for i in var:
-#         transition[('q19', i)] = 'q20'
-#     transition[('q20', ' ')] = 'q20'
-#     for i in operator:
-#         if i == '=':
-#             transition[('q20', i)] = 'q21'
-#         if i == '>' or i == '<':
-#             transition[('q20', i)] = 'q22'
-#     for i in operator:
-#         if i == '=':
-#             transition[('q21', i)] = 'q23'
-#             transition[('q22', i)] = 'q23'
-#     transition[('q23', ' ')] = 'q23'
-#     for i in var:
-#         transition[('q22', i)] = 'q24'
-#         transition[('q23', i)] = 'q24'
-#     for i in angka:
-#         transition[('q22', i)] = 'q24'
-#         transition[('q23', i)] = 'q24'
-#     transition[('q24', ' ')] = 'q24'
-#     transition[('q24', ')')] = 'q25'
-#     transition[('q25', ';')] = 'ACCEPT'
+    transition[('q12', '}')] = 'q13'
+    transition[('q13', ' ')] = 'q13'
+    transition[('q13', 'w')] = 'q14'
+    transition[('q14', 'h')] = 'q15'
+    transition[('q15', 'i')] = 'q16'
+    transition[('q16', 'l')] = 'q17'
+    transition[('q17', 'e')] = 'q18'
+    transition[('q18', ' ')] = 'q18'
+    transition[('q18', '(')] = 'q19'
+    for i in var:
+        transition[('q19', i)] = 'q20'
+    transition[('q20', ' ')] = 'q20'
+    for i in operator:
+        if i == '=':
+            transition[('q20', i)] = 'q21'
+        if i == '>' or i == '<':
+            transition[('q20', i)] = 'q22'
+    for i in operator:
+        if i == '=':
+            transition[('q21', i)] = 'q23'
+            transition[('q22', i)] = 'q23'
+    transition[('q23', ' ')] = 'q23'
+    for i in var:
+        transition[('q22', i)] = 'q24'
+        transition[('q23', i)] = 'q24'
+    for i in angka:
+        transition[('q22', i)] = 'q24'
+        transition[('q23', i)] = 'q24'
+    transition[('q24', ' ')] = 'q24'
+    transition[('q24', ')')] = 'q25'
+    transition[('q25', ';')] = 'ACCEPT'
 
         
 
