@@ -45,23 +45,24 @@ def main():
                 st.write('Syntax Error')
             if analyze(input_string):
                 st.write('TOKEN:')
-                for i in range(len(state_parse)):
-                    if state_parse[i] == 'd' and state_parse[i+1] == 'o':
-                        state_parse[i] = 'do'
-                        state_parse[i+1] = ''
-                    elif state_parse[i] == 'w' and state_parse[i+1] == 'h' and state_parse[i+2] == 'i' and state_parse[i+3] == 'l' and state_parse[i+4] == 'e':
-                        state_parse[i] = 'while'
-                        state_parse[i+1] = ''
-                        state_parse[i+2] = ''
-                        state_parse[i+3] = ''
-                        state_parse[i+4] = ''
-#                     elif state_parse[i] == 'space':
-#                         for y in range(i,len(state_parse)):
-#                             if state_parse[y+1] != 'space':
-#                                  state_parse[y] = ''
-#                             else:
-#                                 break
-                st.write(state_parse)
+                hasil = state_parse
+                for i in range(len(hasil)):
+                    if hasil[i] == 'd' and hasil[i+1] == 'o':
+                        hasil[i] = 'do'
+                        hasil[i+1] = ''
+                    elif hasil[i] == 'w' and hasil[i+1] == 'h' and hasil[i+2] == 'i' and hasil[i+3] == 'l' and hasil[i+4] == 'e':
+                        hasil[i] = 'while'
+                        hasil[i+1] = ''
+                        hasil[i+2] = ''
+                        hasil[i+3] = ''
+                        hasil[i+4] = ''
+                    elif hasil[i] == 'space':
+                        for y in range(i,len(hasil)):
+                            if hasil[y+1] != 'space':
+                                 hasil[y] = ''
+                            else:
+                                break
+                st.write(hasil)
             else:
                 st.write('ERROR : Lexical Error')
         except:
