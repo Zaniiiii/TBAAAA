@@ -20,12 +20,12 @@ def transition_tab(transition):
         transition[('q4', i)] = 'q5'
     for i in plus:
         transition[('q5', i)] = 'q6'
-    transition[('q6', ';')] = 'ACCEPT'
+    transition[('q6', ';')] = 'q13'
     for i in neg:
         transition[('q4', i)] = 'q7'
     for i in neg:
         transition[('q7', i)] = 'q8'
-    transition[('q8', ';')] = 'ACCEPT'
+    transition[('q8', ';')] = 'q13'
     transition[('q4', '=')] = 'q9'
     transition[('q9', ' ')] = 'q9'
     for i in var:
@@ -38,21 +38,15 @@ def transition_tab(transition):
     transition[('q11', ' ')] = 'q11'
     for i in var:
         transition[('q11', i)] = 'q12'
-    transition[('q12', ';')] = 'ACCEPT'
-#     transition[('q6', "1")] = 'ACCEPT'
-    # transition[('q3', ' ')] = 'q3'
-    # transition[('q3', ' ')] = 'q3'
-    # transition[('q3', ' ')] = 'q3'
-    # transition[('q3', ' ')] = 'q3'
-    # transition[('q3', ' ')] = 'q3'
-    # transition[('q3', ' ')] = 'q3'
-    # transition[('q3', ' ')] = 'q3'
-    # transition[('q3', ' ')] = 'q3'
-    # transition[('q3', ' ')] = 'q3'
-    # transition[('q3', ' ')] = 'q3'
-    # transition[('q3', ' ')] = 'q3'
+    transition[('q12', ';')] = 'q13'
+    transition[('q13', ' ')] = 'q13'
+    transition[('q13', 'w')] = 'q14'
+    transition[('q14', 'h')] = 'q15'
+    transition[('q15', 'i')] = 'q16'
+    transition[('q16', 'l')] = 'q17'
+    transition[('q17', 'e')] = 'q18'
+    transition[('q18', ' ')] = 'q18'
+    transition[('q18', '(')] = 'ACCEPT'
 
-
-  
     return transition
 
