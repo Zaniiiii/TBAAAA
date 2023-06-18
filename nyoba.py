@@ -10,8 +10,8 @@ def transition_tab(transition):
     transition[('q1', 'o')] = 'q2'
     transition[('q2', ' ')] = 'q2'
     transition[('q2', '{')] = 'q3'
-    transition[('q3', 'i')] = 'q4'
-    transition[('q4', ' ')] = 'ACCEPT'
+    transition[('q3', ' ')] = 'q3'
+    transition[('q3', 'i')] = 'ACCEPT'
 
   
     return transition
